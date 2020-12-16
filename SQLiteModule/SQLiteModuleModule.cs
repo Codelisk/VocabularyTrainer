@@ -1,5 +1,7 @@
 ﻿using Prism.Ioc;
 using Prism.Modularity;
+using Xamarin.Essentials.Implementation;
+using Xamarin.Essentials.Interfaces;
 
 namespace SQLiteModule
 {
@@ -12,6 +14,7 @@ namespace SQLiteModule
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterSingleton<IFileSystem, FileSystemImplementation>();
         }
     }
 }

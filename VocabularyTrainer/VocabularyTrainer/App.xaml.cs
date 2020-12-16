@@ -28,8 +28,15 @@ namespace VocabularyTrainer
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage>();
+
+            RegisterXamarinEssentials(containerRegistry);
+        }
+        private void RegisterXamarinEssentials(IContainerRegistry containerRegistry)
+        {
             containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
-            //AutoRegistraton(containerRegistry);
+            containerRegistry.RegisterSingleton<IFileSystem, FileSystemImplementation>();
+            containerRegistry.RegisterSingleton<IDeviceInfo, DeviceInfoImplementation>();
+            containerRegistry.RegisterSingleton<IDeviceDisplay, DeviceDisplayImplementation>();
         }
     }
 }
