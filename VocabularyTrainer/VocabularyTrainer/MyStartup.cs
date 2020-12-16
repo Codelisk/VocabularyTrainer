@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace VocabularyTrainer
 {
-    public class MyStartup : ShinyStartup
+    public partial class MyStartup : ShinyStartup
     {
         public override void ConfigureServices(IServiceCollection services)
         {
