@@ -8,6 +8,7 @@ using Xamarin.Essentials.Implementation;
 using Xamarin.Essentials.Interfaces;
 using Xamarin.Forms;
 
+[assembly: NameFormatProvider(NameFormatProviderStyle.CamelCaseNoPageSuffix)]
 namespace VocabularyTrainer
 {
     [AutoRegisterViews]
@@ -20,11 +21,13 @@ namespace VocabularyTrainer
 
         protected override async void OnInitialized()
         {
-            var result=await NavigationService.NavigateAsync("NavigationPage/ViewA");
+            var result=await NavigationService.NavigateAsync("NavigationPage/MainPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<MainPage>();
             containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
             //AutoRegistraton(containerRegistry);
         }

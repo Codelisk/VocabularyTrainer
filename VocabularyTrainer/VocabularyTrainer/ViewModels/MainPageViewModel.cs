@@ -10,19 +10,15 @@ using System.Text;
 
 namespace VocabularyTrainer.ViewModels
 {
-    //[AutoInitialize]
+    [AutoInitialize]
     public partial class MainPageViewModel : ReactiveVmBase
     {
-        //[Bindable]
-        //public string Test { get; set; }
+        [Bindable]
+        public string Test { get; set; }
         public MainPageViewModel(INavigationService navigationService)
             : base()
         {
             Title = "Main Page";
-        }
-        public override void Initialize(INavigationParameters parameters)
-        {
-            base.Initialize(parameters);
         }
     }
 }

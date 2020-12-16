@@ -1,7 +1,5 @@
 ﻿using Prism.Ioc;
 using Prism.Modularity;
-using SQLiteModule.ViewModels;
-using SQLiteModule.Views;
 
 namespace SQLiteModule
 {
