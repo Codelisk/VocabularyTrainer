@@ -1,7 +1,9 @@
+using DryIoc;
 using Prism;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Magician;
+using Prism.Modularity;
 using VocabularyTrainer.ViewModels;
 using VocabularyTrainer.Views;
 using Xamarin.Essentials.Implementation;
@@ -21,13 +23,14 @@ namespace VocabularyTrainer
 
         protected override async void OnInitialized()
         {
-            var result=await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            var result=await NavigationService.NavigateAsync("NavigationPage/" + nameof(CreateVocabularyPage));
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage>();
+            containerRegistry.RegisterForNavigation<CreateVocabularyPage>();
 
             RegisterXamarinEssentials(containerRegistry);
         }
@@ -37,6 +40,15 @@ namespace VocabularyTrainer
             containerRegistry.RegisterSingleton<IFileSystem, FileSystemImplementation>();
             containerRegistry.RegisterSingleton<IDeviceInfo, DeviceInfoImplementation>();
             containerRegistry.RegisterSingleton<IDeviceDisplay, DeviceDisplayImplementation>();
+            containerRegistry.RegisterSingleton<ITextToSpeech, TextToSpeechImplementation>();
+
+        }
+        protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
+        {
+            base.ConfigureModuleCatalog(moduleCatalog);
+            moduleCatalog.AddModule<SharedModule.SharedModuleModule>();
+            moduleCatalog.AddModule<FontAwesomeModule.FontAwesomeModuleModule>();
+            moduleCatalog.AddModule<SQLiteModule.SQLiteModuleModule>();
         }
     }
 }

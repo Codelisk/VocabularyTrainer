@@ -28,7 +28,7 @@ namespace VocabularyTrainer
             //services.UseSqliteStorage();
 
             // your infrastructure
-            services.AddSingleton<MyShinySqliteConnection>();
+            services.AddSingleton<VocabularySqliteConnection>();
         }
     }
 }

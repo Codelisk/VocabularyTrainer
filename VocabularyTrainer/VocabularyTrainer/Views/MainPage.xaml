@@ -1,11 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="VocabularyTrainer.Views.MainPage"
-             Title="{Binding Title}">
+<ContentPage
+    x:Class="VocabularyTrainer.Views.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converter="clr-namespace:SharedModule.Converter;assembly=SharedModule"
+    xmlns:fontawesome="clr-namespace:FontAwesomeModule;assembly=FontAwesomeModule"
+    xmlns:ioc="clr-namespace:Prism.Ioc;assembly=Prism.Forms"
+    Title="{Binding Title}">
+    <ContentPage.Resources>
+        <ioc:ContainerProvider x:Key="ctfancv" x:TypeArguments="converter:CultureToFlagAndNameConverter" />
+    </ContentPage.Resources>
 
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms and Prism!" />
+        <Entry Placeholder="TESTEST" Text="{Binding ShownText}" />
+        <Button Command="{Binding ShownToSpeech}" />
+
+        <Label Text="{Binding Culture, Converter={StaticResource ctfancv}}" />
     </StackLayout>
 
 </ContentPage>

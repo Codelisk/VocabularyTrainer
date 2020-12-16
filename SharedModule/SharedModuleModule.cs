@@ -1,5 +1,7 @@
 ﻿using Prism.Ioc;
 using Prism.Modularity;
+using SharedModule.Services;
+using SharedModule.Services.Interfaces;
 using SharedModule.ViewModels;
 using SharedModule.Views;
 
@@ -14,6 +16,7 @@ namespace SharedModule
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterSingleton<ICultureService, CultureService>();
         }
     }
 }

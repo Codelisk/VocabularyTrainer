@@ -8,7 +8,7 @@ namespace VocabularyTrainer.Droid
     [Application(
         Theme = "@style/MainTheme"
         )]
-    public class MainApplication : Application
+    public class MainApplication : Shiny.ShinyAndroidApplication<MyStartup>
     {
         public MainApplication(IntPtr javaReference, JniHandleOwnership transfer)
             : base(javaReference, transfer)
@@ -18,7 +18,6 @@ namespace VocabularyTrainer.Droid
         public override void OnCreate()
         {
             base.OnCreate();
-            this.ShinyOnCreate(new MyStartup());
             Xamarin.Essentials.Platform.Init(this);
         }
     }

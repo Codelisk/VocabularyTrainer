@@ -5,7 +5,6 @@ using Shiny;
 using UIKit;
 
 
-[assembly: ShinyApplication(ShinyStartupTypeName = "VocabularyTrainer.MyStartup")]
 namespace VocabularyTrainer.iOS
 {
     [Register("AppDelegate")]
@@ -18,6 +17,7 @@ namespace VocabularyTrainer.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            this.ShinyFinishedLaunching(new MyStartup());
             LoadApplication(new App(new iOSInitializer()));
 
             return base.FinishedLaunching(app, options);
