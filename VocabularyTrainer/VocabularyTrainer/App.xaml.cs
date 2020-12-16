@@ -1,4 +1,5 @@
 using Prism;
+using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Magician;
 using VocabularyTrainer.ViewModels;
@@ -10,7 +11,7 @@ using Xamarin.Forms;
 namespace VocabularyTrainer
 {
     [AutoRegisterViews]
-    public partial class App
+    public partial class App : PrismApplication
     {
         public App(IPlatformInitializer initializer)
             : base(initializer)
@@ -19,13 +20,13 @@ namespace VocabularyTrainer
 
         protected override async void OnInitialized()
         {
-            var result=await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            var result=await NavigationService.NavigateAsync("NavigationPage/ViewA");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
-
+            //AutoRegistraton(containerRegistry);
         }
     }
 }

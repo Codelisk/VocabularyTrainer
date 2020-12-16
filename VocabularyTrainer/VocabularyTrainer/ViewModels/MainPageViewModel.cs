@@ -10,7 +10,7 @@ using System.Text;
 
 namespace VocabularyTrainer.ViewModels
 {
-    [AutoInitialize]
+    //[AutoInitialize]
     public partial class MainPageViewModel : ReactiveVmBase
     {
         //[Bindable]
