@@ -2,6 +2,7 @@
 using Prism.Magician;
 using SharedModule.ViewModels.Base;
 using SQLiteModule.Services;
+using SQLiteNetExtensionsAsync.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -14,9 +15,12 @@ namespace VocabularyTrainer.ViewModels
 {
     public partial class CreateVocabularyPageViewModel : ReactiveVmBase
     {
+        private readonly VocabularySqliteConnection _vocabularySqliteConnection;
         public CreateVocabularyPageViewModel(VocabularySqliteConnection vocabularySqliteConnection)
         {
-            //this._myShinySqliteConnection = myShinySqliteConnection as VocabularySqliteConnection;
+            this._vocabularySqliteConnection = vocabularySqliteConnection as VocabularySqliteConnection;
+            Language1 = CultureInfo.CurrentCulture;
+            Language2= CultureInfo.GetCultureInfo("en-GB");
         }
         public OwnVocabulary OwnVocabulary { get; set; }
 
@@ -48,9 +52,17 @@ namespace VocabularyTrainer.ViewModels
                     Text = Text2
                 }
             };
-            //await _myShinySqliteConnection.InsertAsync(ownVocabel);
+            await _vocabularySqliteConnection.InsertOrReplaceWithChildrenAsync(ownVocabel);
             Text1 = "";
             Text2 = "";
+        }
+
+        public override void OnAppearing()
+        {
+            base.OnAppearing();
+            Language1 = CultureInfo.CurrentCulture;
+            Language2 = CultureInfo.GetCultureInfo("en-GB");
+
         }
     }
 }

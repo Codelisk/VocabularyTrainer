@@ -1,21 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
+<TabbedPage
     x:Class="VocabularyTrainer.Views.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:converter="clr-namespace:SharedModule.Converter;assembly=SharedModule"
     xmlns:fontawesome="clr-namespace:FontAwesomeModule;assembly=FontAwesomeModule"
     xmlns:ioc="clr-namespace:Prism.Ioc;assembly=Prism.Forms"
+    xmlns:views="clr-namespace:VocabularyTrainer.Views"
     Title="{Binding Title}">
-    <ContentPage.Resources>
-        <ioc:ContainerProvider x:Key="ctfancv" x:TypeArguments="converter:CultureToFlagAndNameConverter" />
-    </ContentPage.Resources>
-
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Entry Placeholder="TESTEST" Text="{Binding ShownText}" />
-        <Button Command="{Binding ShownToSpeech}" />
-
-        <Label Text="{Binding Culture, Converter={StaticResource ctfancv}}" />
-    </StackLayout>
-
-</ContentPage>
+    <views:TrainingPage Title="Training" />
+    <views:CreateVocabularyPage Title="Vokabeln anlegen" />
+</TabbedPage>

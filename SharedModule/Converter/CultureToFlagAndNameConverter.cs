@@ -29,6 +29,10 @@ namespace SharedModule.Converter
 
                     return _cultureService.GetCountryEmoji(cultureToWorkWith) + "  " + new RegionInfo(cultureToWorkWith.LCID).EnglishName;
                 }
+                else if (parameter?.Equals("Flag") == true)
+                {
+                    return _cultureService.GetCountryEmoji(cultureToWorkWith);
+                }
                 else
                 {
                     return _cultureService.GetCountryEmoji(cultureToWorkWith) + "  " + cultureToWorkWith.NativeName;

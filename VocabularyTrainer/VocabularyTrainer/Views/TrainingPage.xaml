@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="VocabularyTrainer.Views.TrainingPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converter="clr-namespace:SharedModule.Converter;assembly=SharedModule"
+    xmlns:fontawesome="clr-namespace:FontAwesomeModule;assembly=FontAwesomeModule"
+    xmlns:ioc="clr-namespace:Prism.Ioc;assembly=Prism.Forms"
+    xmlns:prism="http://prismlibrary.com"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    Visual="Material">
+
+    <ContentPage.Resources>
+        <ioc:ContainerProvider x:Key="ctfancv" x:TypeArguments="converter:CultureToFlagAndNameConverter" />
+    </ContentPage.Resources>
+
+    <Grid Margin="20" VerticalOptions="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Label Text="{Binding Culture1, Converter={StaticResource ctfancv}, ConverterParameter='Flag'}" />
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <Label Text="{Binding ShownText}" />
+            <Label
+                Grid.Column="1"
+                FontFamily="FontAwesome"
+                Text="{x:Static fontawesome:FontAwesomeIcons.VolumeUp}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ShownToSpeech}" CommandParameter="{Binding ShownText}" />
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+
+        <Label Grid.Row="2" Text="{Binding Culture2, Converter={StaticResource ctfancv}}" />
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <Entry
+                HorizontalOptions="FillAndExpand"
+                Placeholder="Gib hier deine Übersetzung ein."
+                Text="{Binding EnterText}" />
+            <Label
+                Grid.Column="1"
+                FontFamily="FontAwesome"
+                Text="{x:Static fontawesome:FontAwesomeIcons.VolumeUp}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ShownToSpeech}" CommandParameter="{Binding EnterText}" />
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+        <Button Grid.Row="3" Command="{Binding ShownToSpeech}" />
+        <Button
+            Grid.Row="3"
+            Command="{Binding CheckCommand}"
+            Text="Check" />
+    </Grid>
+
+</ContentPage>

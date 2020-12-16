@@ -10,11 +10,21 @@
         <DebugType>pdbonly</DebugType>
         <DebugSymbols>true</DebugSymbols>
     </PropertyGroup>
+
+    <ItemGroup>
+      <None Remove="Resources\fa-solid-900.ttf" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="Resources\fa-solid-900.ttf">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+    </ItemGroup>
 	
   <ItemGroup>
     <PackageReference Include="Prism.Magician" Version="8.0.133-beta" />
-    <PackageReference Include="Shiny.Integrations.Sqlite" Version="1.2.0.1755" />
-    <PackageReference Include="Shiny.SpeechRecognition" Version="1.2.0.1755" />
+    <PackageReference Include="Shiny.Integrations.Sqlite" Version="2.0.0.2381-preview" />
+    <PackageReference Include="Shiny.SpeechRecognition" Version="2.0.0.2381-preview" />
     <PackageReference Include="Shiny.SpeechRecognition.Abstractions" Version="2.0.0.2381-preview" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.1791-pre5" />
     <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.6.0-rc1" />
@@ -30,6 +40,9 @@
 	
   <ItemGroup>
     <EmbeddedResource Update="Views\CreateVocabularyPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TrainingPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

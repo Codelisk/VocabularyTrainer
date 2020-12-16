@@ -1,12 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="VocabularyTrainer.Views.CreateVocabularyPage">
+<ContentPage
+    x:Class="VocabularyTrainer.Views.CreateVocabularyPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    Visual="Material">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Entry Placeholder="Text 1" Text="{Binding Text1}" />
+            <Entry Placeholder="Text 2" Text="{Binding Text2}" />
+            <Button Command="{Binding SaveVocabularyCommand}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

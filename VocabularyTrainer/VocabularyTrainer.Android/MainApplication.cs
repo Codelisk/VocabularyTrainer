@@ -5,20 +5,16 @@ using Shiny;
 
 namespace VocabularyTrainer.Droid
 {
-    [Application(
-        Theme = "@style/MainTheme"
-        )]
-    public class MainApplication : Shiny.ShinyAndroidApplication<MyStartup>
+    [Application]
+    public partial class MainApplication : Application
     {
-        public MainApplication(IntPtr javaReference, JniHandleOwnership transfer)
-            : base(javaReference, transfer)
-        {
-        }
+        public MainApplication(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer) { }
+
 
         public override void OnCreate()
         {
             base.OnCreate();
-            Xamarin.Essentials.Platform.Init(this);
+            this.ShinyOnCreate(new MyStartup());
         }
     }
 }
