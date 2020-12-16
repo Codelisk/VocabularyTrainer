@@ -13,8 +13,11 @@
 	
   <ItemGroup>
     <PackageReference Include="Prism.Magician" Version="8.0.133-beta" />
-    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1364" />
-    <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.5.3.2" />
+    <PackageReference Include="Shiny.Integrations.Sqlite" Version="2.0.0.2381-preview" />
+    <PackageReference Include="Shiny.SpeechRecognition" Version="2.0.0.2381-preview" />
+    <PackageReference Include="Shiny.SpeechRecognition.Abstractions" Version="2.0.0.2381-preview" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1791-pre5" />
+    <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.6.0-rc1" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="8.1.10-pre" />
   </ItemGroup>
 	

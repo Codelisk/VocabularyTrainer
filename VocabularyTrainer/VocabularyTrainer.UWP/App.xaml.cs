@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shiny;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -30,6 +31,7 @@ namespace VocabularyTrainer.UWP
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            this.ShinyInit(new MyStartup());
         }
 
         /// <summary>

@@ -1,6 +1,7 @@
 using System;
 using Android.App;
 using Android.Runtime;
+using Shiny;
 
 namespace VocabularyTrainer.Droid
 {
@@ -17,6 +18,7 @@ namespace VocabularyTrainer.Droid
         public override void OnCreate()
         {
             base.OnCreate();
+            this.ShinyOnCreate(new MyStartup());
             Xamarin.Essentials.Platform.Init(this);
         }
     }
