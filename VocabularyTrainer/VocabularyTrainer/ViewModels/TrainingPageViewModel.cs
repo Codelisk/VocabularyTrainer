@@ -2,7 +2,6 @@
 using Prism.Magician;
 using Prism.Mvvm;
 using Prism.Navigation;
-using ReactiveUI;
 using SharedModule.ViewModels.Base;
 using SQLiteNetExtensionsAsync.Extensions;
 using System;
@@ -26,18 +25,10 @@ namespace VocabularyTrainer.ViewModels
             _textToSpeech = textToSpeech;
         }
         private readonly ITextToSpeech _textToSpeech;
-        private string shownText;
-        public string ShownText
-        {
-            get { return shownText; }
-            set { this.RaiseAndSetIfChanged(ref shownText, value); }
-        }
-        private string enterText;
-        public string EnterText
-        {
-            get { return enterText; }
-            set { this.RaiseAndSetIfChanged(ref enterText, value); }
-        }
+        [Reactive]
+        public string ShownText { get; set; }
+        [Reactive]
+        public string EnterText { get; set; }
         public ObservableCollection<VocabularyPair<OwnVocabulary>> VocabularyPairs { get; set; }
 
         private DelegateCommand<string> _shownToSpeech;
