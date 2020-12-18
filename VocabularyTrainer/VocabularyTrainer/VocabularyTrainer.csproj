@@ -22,7 +22,7 @@
     </ItemGroup>
 	
   <ItemGroup>
-    <PackageReference Include="Prism.Magician" Version="8.0.133-beta" />
+    <PackageReference Include="Prism.Magician" Version="8.0.141-beta" />
     <PackageReference Include="Shiny.Integrations.Sqlite" Version="2.0.0.2381-preview" />
     <PackageReference Include="Shiny.SpeechRecognition" Version="2.0.0.2381-preview" />
     <PackageReference Include="Shiny.SpeechRecognition.Abstractions" Version="2.0.0.2381-preview" />

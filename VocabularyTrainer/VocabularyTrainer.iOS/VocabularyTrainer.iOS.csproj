@@ -198,6 +198,9 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Prism.Magician">
+      <Version>8.0.141-beta</Version>
+    </PackageReference>
     <PackageReference Include="Shiny.Core">
       <Version>2.0.0.2381-preview</Version>
     </PackageReference>

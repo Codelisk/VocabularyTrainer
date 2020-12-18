@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Prism.Magician" Version="8.0.133-beta" />
+    <PackageReference Include="Prism.Magician" Version="8.0.141-beta" />
     <PackageReference Include="ReactiveUI" Version="13.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.1791-pre5" />
     <PackageReference Include="Prism.Forms" Version="8.1.10-pre" />

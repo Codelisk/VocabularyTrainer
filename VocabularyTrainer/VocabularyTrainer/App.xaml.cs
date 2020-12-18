@@ -28,12 +28,13 @@ namespace VocabularyTrainer
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<NavigationPage>();
+            /*containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage>();
             containerRegistry.RegisterForNavigation<CreateVocabularyPage>();
-            containerRegistry.RegisterForNavigation<TrainingPage>();
+            containerRegistry.RegisterForNavigation<TrainingPage>();*/
 
             RegisterXamarinEssentials(containerRegistry);
+            AutoRegistraton(containerRegistry);
         }
         private void RegisterXamarinEssentials(IContainerRegistry containerRegistry)
         {
