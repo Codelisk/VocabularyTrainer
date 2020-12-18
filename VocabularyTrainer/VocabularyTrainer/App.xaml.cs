@@ -10,7 +10,6 @@ using Xamarin.Essentials.Implementation;
 using Xamarin.Essentials.Interfaces;
 using Xamarin.Forms;
 
-[assembly: NameFormatProvider(NameFormatProviderStyle.CamelCaseNoPageSuffix)]
 namespace VocabularyTrainer
 {
     [AutoRegisterViews]
@@ -33,8 +32,8 @@ namespace VocabularyTrainer
             containerRegistry.RegisterForNavigation<CreateVocabularyPage>();
             containerRegistry.RegisterForNavigation<TrainingPage>();*/
 
-            RegisterXamarinEssentials(containerRegistry);
-            AutoRegistraton(containerRegistry);
+            //RegisterXamarinEssentials(containerRegistry);
+            //AutoRegistraton(containerRegistry);
         }
         private void RegisterXamarinEssentials(IContainerRegistry containerRegistry)
         {
