@@ -22,7 +22,7 @@ namespace VocabularyTrainer
 
         protected override async void OnInitialized()
         {
-            var result=await NavigationService.NavigateAsync("NavigationPage/" + "MainPage");
+            var result=await NavigationService.NavigateAsync("NavigationPage/" + "TestPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
