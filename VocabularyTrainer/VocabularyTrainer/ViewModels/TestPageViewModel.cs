@@ -1,5 +1,6 @@
 ﻿using Prism.Magician;
 using Prism.Navigation;
+using ReactiveUI;
 using SharedModule.ViewModels.Base;
 using System;
 using System.Collections.Generic;
@@ -16,11 +17,18 @@ namespace VocabularyTrainer.ViewModels
 
         }
         [Reactive]
-        public string Test { get; set; }
+        public string MagicianReactive { get; set; }
+        private string _normalReactive;
+        public string NormalReactive
+        {
+            get { return _normalReactive; }
+            set { this.RaiseAndSetIfChanged(ref _normalReactive, value); }
+        }
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
             base.OnNavigatedTo(parameters);
-            Test = "TEST";
+            MagicianReactive = "Magician Binding";
+            NormalReactive = "Normal Reactive Binding";
         }
     }
 }

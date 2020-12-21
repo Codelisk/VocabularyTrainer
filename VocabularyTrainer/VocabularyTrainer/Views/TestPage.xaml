@@ -5,10 +5,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label Text="{Binding NormalReactive}" TextColor="Red" />
             <Label Text="TEXT SHOULD APPEAR UNDER THIS LABEL" />
             <Label
                 HorizontalOptions="CenterAndExpand"
-                Text="{Binding Test}"
+                Text="{Binding MagicianReactive}"
+                TextColor="Green"
                 VerticalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
