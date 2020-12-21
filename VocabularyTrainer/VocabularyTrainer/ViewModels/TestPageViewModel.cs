@@ -18,12 +18,12 @@ namespace VocabularyTrainer.ViewModels
         }
         [Reactive]
         public string MagicianReactive { get; set; }
-        private string _normalReactive;
+        /*private string _normalReactive;
         public string NormalReactive
         {
             get { return _normalReactive; }
             set { this.RaiseAndSetIfChanged(ref _normalReactive, value); }
-        }
+        }*/
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
             base.OnNavigatedTo(parameters);
