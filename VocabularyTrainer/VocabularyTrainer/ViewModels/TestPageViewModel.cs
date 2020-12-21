@@ -28,7 +28,7 @@ namespace VocabularyTrainer.ViewModels
         {
             base.OnNavigatedTo(parameters);
             MagicianReactive = "Magician Binding";
-            NormalReactive = "Normal Reactive Binding";
+            //NormalReactive = "Normal Reactive Binding";
         }
     }
 }
