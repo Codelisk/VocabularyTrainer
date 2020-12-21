@@ -22,7 +22,7 @@ namespace VocabularyTrainer
 
         protected override async void OnInitialized()
         {
-            var result=await NavigationService.NavigateAsync("NavigationPage/" + nameof(Views.MainPage));
+            var result=await NavigationService.NavigateAsync("NavigationPage/" + "MainPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -32,7 +32,7 @@ namespace VocabularyTrainer
             containerRegistry.RegisterForNavigation<CreateVocabularyPage>();
             containerRegistry.RegisterForNavigation<TrainingPage>();*/
 
-            //RegisterXamarinEssentials(containerRegistry);
+            RegisterXamarinEssentials(containerRegistry);
             //AutoRegistraton(containerRegistry);
         }
         private void RegisterXamarinEssentials(IContainerRegistry containerRegistry)

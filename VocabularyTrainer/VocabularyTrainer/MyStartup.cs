@@ -16,7 +16,7 @@ namespace VocabularyTrainer
         {
             Log.UseConsole();
             Log.UseDebug();
-
+            services.AddSingleton<ILogger, Shiny.Logging.ConsoleLogger>();
             //services.UseTestMotionActivity(Shiny.Locations.MotionActivityType.Automotive);
 
             //services.UseAppCenterLogging(Constants.AppCenterTokens, true, false);
