@@ -14,7 +14,7 @@
     <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
     <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.6.0-rc1" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.1791-pre5" />
-    <PackageReference Include="Prism.Forms" Version="8.1.10-pre" />
+    <PackageReference Include="Prism.Forms" Version="8.1.13-pre" />
   </ItemGroup>
 
 </Project>

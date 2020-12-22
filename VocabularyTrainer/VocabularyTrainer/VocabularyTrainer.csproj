@@ -22,13 +22,13 @@
     </ItemGroup>
 	
   <ItemGroup>
-    <PackageReference Include="Prism.Magician" Version="8.0.141-beta" />
+    <PackageReference Include="Prism.Magician" Version="8.0.146-beta" />
     <PackageReference Include="Shiny.Integrations.Sqlite" Version="2.0.0.2381-preview" />
     <PackageReference Include="Shiny.SpeechRecognition" Version="2.0.0.2381-preview" />
     <PackageReference Include="Shiny.SpeechRecognition.Abstractions" Version="2.0.0.2381-preview" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.1791-pre5" />
     <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.6.0-rc1" />
-    <PackageReference Include="Prism.DryIoc.Forms" Version="8.1.10-pre" />
+    <PackageReference Include="Prism.DryIoc.Forms" Version="8.1.13-pre" />
     <PackageReference Include="Xamarin.Forms.Visual.Material" Version="5.0.0.1791-pre5" />
   </ItemGroup>
 	
