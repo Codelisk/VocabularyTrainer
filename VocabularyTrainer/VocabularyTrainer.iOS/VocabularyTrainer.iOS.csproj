@@ -202,13 +202,13 @@
       <Version>8.0.146-beta</Version>
     </PackageReference>
     <PackageReference Include="Shiny.Core">
-      <Version>2.0.0.2381-preview</Version>
+      <Version>2.0.0.2404-preview</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1791-pre5" />
-    <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.6.0-rc1" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1829-pre6" />
+    <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.6.1-preview1" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="8.1.13-pre" />
     <PackageReference Include="Xamarin.Forms.Visual.Material">
-      <Version>5.0.0.1791-pre5</Version>
+      <Version>5.0.0.1829-pre6</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
