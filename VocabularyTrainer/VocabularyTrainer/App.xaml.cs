@@ -4,6 +4,8 @@ using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Magician;
 using Prism.Modularity;
+using System.Threading.Tasks;
+using VocabularyTrainer.Navigation;
 using VocabularyTrainer.ViewModels;
 using VocabularyTrainer.Views;
 using Xamarin.Essentials.Implementation;
@@ -22,7 +24,7 @@ namespace VocabularyTrainer
 
         protected override async void OnInitialized()
         {
-            var result=await NavigationService.NavigateAsync("NavigationPage/" + "TestPage");
+            var result=await NavigationService.NavigateAsync("MMainPage"+"/NavigationPage/" + NavigationKeys.MainPage);
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

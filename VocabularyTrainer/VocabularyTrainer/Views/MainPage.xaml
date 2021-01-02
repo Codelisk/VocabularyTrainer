@@ -8,6 +8,5 @@
     xmlns:ioc="clr-namespace:Prism.Ioc;assembly=Prism.Forms"
     xmlns:views="clr-namespace:VocabularyTrainer.Views"
     Title="{Binding Title}">
-    <views:TrainingPage Title="Training" />
-    <views:CreateVocabularyPage Title="Vokabeln anlegen" />
+    <ContentPage Title="Test" />
 </TabbedPage>
